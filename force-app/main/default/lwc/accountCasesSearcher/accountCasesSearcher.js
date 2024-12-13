@@ -19,7 +19,7 @@ export default class AccountCaseSearchComponent extends LightningElement {
     }
 
     handleSearch() {
-        findCasesBySubject({ accountId: this.recordId, subjectSearchTerm: this.searchTerm })
+        findCasesBySubject({ accountId: this.recordId, searchTerm: this.searchTerm })
             .then(result => {
                 this.cases = result;
                 this.error = undefined;

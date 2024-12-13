@@ -1,12 +1,15 @@
 <template>
     <lightning-card title="Opportunités du Compte" icon-name="standard:opportunity">
-        <div class=slds-max-large-size_xx-large>
+        <div class="slds-max-large-size_xx-large">
             <lightning-button class="slds-m-bottom_small" label="Rafraîchir" onclick={handleRafraichir} variant="brand"></lightning-button>
-            <template if:false={opportunities}>
-                <lightning-datatable data={opportunities}
-                                     columns={columns}
-                                     key-field="Id"
-                                     class="slds-box slds-theme_default">
+            <template if:true={opportunities}>
+                <lightning-datatable 
+                    data={opportunities}
+                    columns={columns}
+                    key-field="Id"
+                    hide-checkbox-column
+                    show-row-number-column
+                    class="slds-box slds-theme_default">
                 </lightning-datatable>
             </template>
             <template if:true={error}>
